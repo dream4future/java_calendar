@@ -24,18 +24,24 @@ public class Calendar {
 		Calendar cal = new Calendar();
 
 		// 숫자 입력받아 해당 월의 최대 일수 출력
-		System.out.println("달을 입력하세요.");
+		
 		Scanner sc = new Scanner(System.in);
-		int month = sc.nextInt();
-		
-		if(month>12 || month<1) {
-			System.out.println("범위를 벗어났습니다.");
+		while(true) {
+			System.out.println("달을 입력하세요.");
+			System.out.println(">>>");
+			
+			int month = sc.nextInt();
+			
+			if(month>12 || month<1) {
+				System.out.println("범위를 벗어났습니다.");
+				break;
+			}
+			else {
+				System.out.println(month + "월의 최대 일수는 " + cal.getMaxDay(month) + "일입니다.");
+			}
+			
 		}
-		else {
-			System.out.println(month + "월의 최대 일수는 " + cal.getMaxDay(month) + "일입니다.");
-		}
-		
-		cal.printSampleCalendar();
 		sc.close();
+		cal.printSampleCalendar();
 	}
 }
