@@ -6,7 +6,7 @@ public class Calendar {
 
 	private static final int[] MaxDay = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-	public static int getMaxDay(int month) {
+	public int getMaxDay(int month) {
 			return MaxDay[month];
 	}
 	
@@ -21,9 +21,10 @@ public class Calendar {
 
 	public static void main(String[] args) {
 		
+		Calendar cal = new Calendar();
 
 		// 숫자 입력받아 해당 월의 최대 일수 출력
-		System.out.println("월을 입력하세요.");
+		System.out.println("달을 입력하세요.");
 		Scanner sc = new Scanner(System.in);
 		int month = sc.nextInt();
 		
@@ -31,8 +32,10 @@ public class Calendar {
 			System.out.println("범위를 벗어났습니다.");
 		}
 		else {
-			System.out.println(month + "월의 최대 일수는 " + getMaxDay(month) + "일입니다.");
+			System.out.println(month + "월의 최대 일수는 " + cal.getMaxDay(month) + "일입니다.");
 		}
+		
+		cal.printSampleCalendar();
 		sc.close();
 	}
 }
